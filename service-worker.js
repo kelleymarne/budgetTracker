@@ -37,6 +37,7 @@ const FILES_TO_CACHE = [
         return cache.addAll(FILES_TO_CACHE)
       })
     )
+    self.skipWaiting();
   });
 
   self.addEventListener('activate', function(e) {
@@ -57,5 +58,6 @@ const FILES_TO_CACHE = [
         );
       })
     );
+    self.clients.claim();
   });
 

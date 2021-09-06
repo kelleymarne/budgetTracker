@@ -18,7 +18,6 @@ request.onsuccess = function(event) {
 
     // check if app is online, if yes run uploadExpenses() function to send all local db data to api
     if (navigator.onLine) {
-        // we havent created this yet, but will soon
         uploadExpenses();
     }
 };
@@ -33,7 +32,6 @@ function saveRecord(record) {
     //  open a new transaction with the database with read and write permissions
     const transaction = db.transaction(['new_tracker'], 'readwrite');
 
-    // access the object store for `new_pizza`
     const trackerObjectStore = transaction.objectStore('new_tracker');
 
     // add record to your store with add method
